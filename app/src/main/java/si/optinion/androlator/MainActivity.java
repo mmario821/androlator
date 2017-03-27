@@ -11,26 +11,209 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        operand1 = 0;
+        operator = 0;
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final EditText txt1 = (EditText)findViewById(R.id.editText);
-        txt1.setText("0");
-        final EditText txt2 = (EditText)findViewById(R.id.editText2);
-        txt2.setText("0");
-        final TextView lbl1 = (TextView)findViewById(R.id.textView);
-        lbl1.setText("0");
-
-        final Button button = (Button)findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v)
-            {
-                Integer num1 = Integer.parseInt(txt1.getText().toString());
-                Integer num2 = Integer.parseInt(txt2.getText().toString());
-                Integer sum = num1+num2;
-                // Perform onclick
-                lbl1.setText(sum.toString());
+        Button but9 = (Button)findViewById(R.id.but9);
+        but9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addNumber("9");
             }
         });
+
+        Button but8 = (Button)findViewById(R.id.but8);
+        but8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addNumber("8");
+            }
+        });
+
+        Button but7 = (Button)findViewById(R.id.but7);
+        but7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addNumber("7");
+            }
+        });
+
+        Button but6 = (Button)findViewById(R.id.but6);
+        but6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addNumber("6");
+            }
+        });
+
+        Button but5 = (Button)findViewById(R.id.but5);
+        but5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addNumber("5");
+            }
+        });
+
+        Button but4 = (Button)findViewById(R.id.but4);
+        but4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addNumber("4");
+            }
+        });
+
+        Button but3 = (Button)findViewById(R.id.but3);
+        but3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addNumber("3");
+            }
+        });
+
+        Button but2 = (Button)findViewById(R.id.but2);
+        but2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addNumber("2");
+            }
+        });
+
+        Button but1 = (Button)findViewById(R.id.but1);
+        but1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addNumber("1");
+            }
+        });
+
+        Button but0 = (Button)findViewById(R.id.but0);
+        but0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addNumber("0");
+            }
+        });
+
+        Button butce = (Button)findViewById(R.id.butce);
+        butce.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Reset text view to 0
+                resetToZero();
+                // Clear operand1
+                operand1 = 0;
+                // Clear operator
+                operator = 0;
+            }
+        });
+
+        Button butplus = (Button)findViewById(R.id.butplus);
+        butplus.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                // Get number from textbox and save it as operand 1
+                operand1 = getNumber();
+                // Mark operator +
+                operator = 1;
+                // Set textview to 0
+                setNumber(0);
+            }
+        });
+
+        Button butcalculate = (Button)findViewById(R.id.butcalculate);
+        butcalculate.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View V){
+                // Process calculation only if operator > 0
+                if (operator == 1)
+                {
+                    // Get number from the textbox
+                    Integer num2 = getNumber();
+
+                    // TODO Sum two numbers
+                    Integer sum = operand1+num2;
+
+                    // Save number in the textivew
+                    setNumber(sum);
+
+                    // Reset operand1
+                    operand1 = 0;
+                    // Reset operator
+                    operator = 0;
+                }
+            }
+        });
+
+
     }
+
+    /**
+     * Return number from the textview,
+     * return 0 if the number cannot be converted to valid integer.
+     *
+     * @return  Integer Number from the textview
+     */
+    private Integer getNumber()
+    {
+        TextView lbl1 = (TextView)findViewById(R.id.textView);
+
+        try {
+            return Integer.parseInt(lbl1.getText().toString());
+        } catch(NumberFormatException nfe) {
+            return 0;
+        }
+    }
+
+    /**
+     * Set TextView value to desired value
+     *
+     * @param Integer   num     Number to be set to TextView
+     */
+    private void setNumber(Integer num)
+    {
+        TextView lbl1 = (TextView)findViewById(R.id.textView);
+
+        lbl1.setText(num.toString());
+    }
+
+    /**
+     * Reset TextView value to 0
+     */
+    private void resetToZero()
+    {
+        setNumber(0);
+    }
+
+    /**
+     * Append digit to a TextView
+     *
+     * @param String    num     Value to be appended
+     */
+    private void addNumber(String num)
+    {
+        TextView lbl1 = (TextView)findViewById(R.id.textView);
+
+        // Get current number and append first character from num
+        String new_number = getNumber().toString().concat(num.substring(0, 1));
+
+        try {
+            Integer val = Integer.parseInt(new_number);
+            lbl1.append(val.toString());
+        } catch(NumberFormatException nfe) {
+            // Do nothing...
+        }
+    }
+
+    /// This is one operand which is then used in mathematical operation
+    private Integer operand1;
+
+    /**
+     * Operator 0 => No operator selected
+     * Operator 1 => Plus (sum)
+     */
+    private Integer operator;
 }

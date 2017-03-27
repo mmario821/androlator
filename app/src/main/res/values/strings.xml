@@ -3,4 +3,18 @@
     <string name="txt_numberone_title">Number #1</string>
     <string name="txt_numbertwo_title">Number #2</string>
     <string name="but_sum_title">Sum</string>
+    <string name="but9_title">9</string>
+    <string name="but8_title">8</string>
+    <string name="but7_title">7</string>
+    <string name="but6_title">6</string>
+    <string name="but5_title">5</string>
+    <string name="but4_title">4</string>
+    <string name="but3_title">3</string>
+    <string name="but2_title">2</string>
+    <string name="but1_title">1</string>
+    <string name="but0_title">0</string>
+    <string name="butce_title">CE</string>
+    <string name="butplus_title">+</string>
+    <string name="butminus_title">-</string>
+    <string name="butcalculate_title">=</string>
 </resources>

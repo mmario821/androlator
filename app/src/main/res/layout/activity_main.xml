@@ -7,52 +7,147 @@
     android:layout_height="match_parent"
     tools:context="si.optinion.androlator.MainActivity">
 
-    <EditText
-        android:id="@+id/editText"
-        android:digits="0,1,2,3,4,5,6,7,8,9,."
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="@string/txt_numberone_title"
-        android:inputType="textPersonName"
-        android:selectAllOnFocus="true"
+        android:gravity="end"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="88dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:text="@string/but_sum_title"
-        app:layout_constraintBaseline_toBaselineOf="@+id/editText"
-        app:layout_constraintLeft_toRightOf="@+id/editText"
-        android:layout_marginRight="16dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.0" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:digits="0,1,2,3,4,5,6,7,8,9,0,."
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/but7"
+        android:layout_width="65dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="@string/txt_numbertwo_title"
-        android:inputType="textPersonName"
+        android:text="@string/but7_title"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="216dp"
-        android:layout_height="0dp"
-        android:layout_marginLeft="16dp"
+    <Button
+        android:id="@+id/but8"
+        android:layout_width="65dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/but8_title"
+        app:layout_constraintBaseline_toBaselineOf="@+id/but7"
+        app:layout_constraintLeft_toRightOf="@+id/but7" />
+
+    <Button
+        android:id="@+id/but9"
+        android:layout_width="65dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/but9_title"
+        app:layout_constraintBaseline_toBaselineOf="@+id/but8"
+        app:layout_constraintLeft_toRightOf="@+id/but8" />
+
+    <Button
+        android:id="@+id/but4"
+        android:layout_width="65dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="0"
+        android:text="@string/but4_title"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        app:layout_constraintTop_toBottomOf="@+id/but7" />
+
+    <Button
+        android:id="@+id/but5"
+        android:layout_width="65dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/but5_title"
+        app:layout_constraintBaseline_toBaselineOf="@+id/but4"
+        app:layout_constraintLeft_toRightOf="@+id/but4" />
+
+    <Button
+        android:id="@+id/but6"
+        android:layout_width="65dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/but6_title"
+        app:layout_constraintBaseline_toBaselineOf="@+id/but5"
+        app:layout_constraintLeft_toRightOf="@+id/but5" />
+
+    <Button
+        android:id="@+id/but1"
+        android:layout_width="65dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/but1_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/but4" />
+
+    <Button
+        android:id="@+id/but2"
+        android:layout_width="65dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/but2_title"
+        app:layout_constraintBaseline_toBaselineOf="@+id/but1"
+        app:layout_constraintLeft_toRightOf="@+id/but1" />
+
+    <Button
+        android:id="@+id/but3"
+        android:layout_width="65dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/but3_title"
+        app:layout_constraintBaseline_toBaselineOf="@+id/but2"
+        app:layout_constraintLeft_toRightOf="@+id/but2" />
+
+    <Button
+        android:id="@+id/but0"
+        android:layout_width="227dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/but0_title"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/but1" />
+
+    <Button
+        android:id="@+id/butce"
+        android:layout_width="65dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/butce_title"
+        app:layout_constraintBaseline_toBaselineOf="@+id/but9"
+        app:layout_constraintLeft_toRightOf="@+id/but9" />
+
+    <Button
+        android:id="@+id/butplus"
+        android:layout_width="65dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/butplus_title"
+        app:layout_constraintLeft_toRightOf="@+id/but3"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/but3" />
+
+    <Button
+        android:id="@+id/butminus"
+        android:layout_width="65dp"
+        android:layout_height="48dp"
+        android:text="@string/butminus_title"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toRightOf="@+id/but6"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/but6" />
+
+    <Button
+        android:id="@+id/butcalculate"
+        android:layout_width="65dp"
+        android:layout_height="48dp"
+        android:text="@string/butcalculate_title"
+        app:layout_constraintLeft_toRightOf="@+id/but0"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/but0" />
 </android.support.constraint.ConstraintLayout>
