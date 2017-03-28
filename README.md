@@ -5,5 +5,5 @@ This is just a test project, and only supports plus and minus operators.
 
 See attached screenshot:
 
-https://github.com/mmario821/androlator/blob/master/doc/androlator.png
+![alt tag](https://github.com/mmario821/androlator/blob/master/doc/androlator.png)
 
